@@ -52,6 +52,11 @@ $\ \frac{\text{Number of permutations with Neh heuristic}}{n!} $
 ```
 </details>
 
+## Relative optimality:
+
+To check the effectiveness of the algorithm, I ran it on a 10 jobs and 5 machines and it did net me a relative worse solution by 4.35% in comparison to the optimal makespan. Speed is appreciated against $NP-hard$ problems, but when you combine this feature with a very high optimality gap, that's another story.
+
+
 
 In this repo you will find an easy to use Python script that implements the algorithm. 
 
