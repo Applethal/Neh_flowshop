@@ -13,7 +13,7 @@ $\ \frac{\text{Number of generated permutations}}{n!} $
 <details>
 <summary>This algorithm has a time complexity O(nlogn)+O(n⋅m) , it runs the following steps:</summary>
 <br>
-# Pseudo Code for the Neh Algorithm
+
 
 ## Input:
 - n: number of jobs
