@@ -1,5 +1,5 @@
 # Neh_flowshop
-Implementation of the Neh algorithm in Python
+
 
 [The Neh heuristic by Nawaz et al., 1983](https://www.sciencedirect.com/science/article/abs/pii/0305048383900889) is dubbed as an effective greedy heuristic algorithm for flow shop problems. 
 
