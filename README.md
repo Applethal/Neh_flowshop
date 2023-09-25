@@ -3,7 +3,7 @@
 
 [The Neh heuristic by Nawaz et al., 1983](https://www.sciencedirect.com/science/article/abs/pii/0305048383900889) is dubbed as an effective greedy heuristic algorithm for flow shop problems. 
 
-Naturally, for a flowshop problem, the search space is bounded up to \( n! \) jobs. The heuristic reduces this space by
+Naturally, for a flowshop problem, the search space is bounded up to \( n! \) jobs. The heuristic reduces this space by:
 
 \
 $\ \frac{\text{Number of generated permutations}}{n!} $ 
@@ -62,8 +62,8 @@ In this repo you will find an easy to use Python script that implements the algo
 
 ## How to use:
 
-1. Fill the machines_jobs variable with a multi-dimensional matrix array that contains the processing times, each  array represents a machine, each inner value represents the processing times of the $j$ jobs in the given machine. Dealing with dictionaries is slow and made it hard for me to build the logic of the code, arrays shall it be! check the example at the end
-2. This is a flow shop problem, each job will be processed once on each machine, I did not add a function that checks if all the processing times are inside. Make sure everything is inside
+1. Fill the machines_jobs variable with a multi-dimensional matrix array that contains the processing times, each  array represents a machine, each inner value represents the processing times of the $j$ jobs in the given machine. Dealing with dictionaries is slow and made it hard for me to build the logic of the code, arrays shall it be! check the example at the end.
+2. This is a flow shop problem, each job will be processed once on each machine, Make sure everything is inside.
 3. Run it and let it do its magic, you will get a permutation together with its makespan.
 
 Example: 
