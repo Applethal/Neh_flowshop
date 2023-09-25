@@ -13,38 +13,42 @@ $\ \frac{\text{Number of permutations with Neh heuristic}}{n!} $
 <details>
 <summary>This algorithm has a time complexity O(nlogn)+O(n⋅m) , it runs the following steps:</summary>
 <br>
-Input:
-- Job_dict: Dictionary containing job processing times for each machine
-- num_machines: Number of machines
+# Pseudo Code for the Neh Algorithm
 
-Output:
-- best_schedule: The best job schedule found by the Neh heuristic
-- best_makespan: The makespan associated with the best schedule
+## Input:
+- n: number of jobs
+- m: number of machines
+- processing_times: array of processing times for each job on each machine
 
-Algorithm:
-1. For each job, compute its sum across all the machines.
-2. Initialize an empty schedule with 'num_machines' machines.
-3. For each job in the sorted order:
-     a. Assign the job to the machine with the minimum total processing time.
-4. Calculate the makespan for the final schedule.
+## Output:
+- schedule: a schedule that minimizes the makespan
 
-Pseudo-code:
-function Neh(Job_dict, num_machines):
-    job_sums = {job: sum(Job_dict[job]) for job in Job_dict}
-    sorted_jobs = sort jobs in non-increasing order of job_sums
+## Procedure:
+1. Compute the sum of each job across each machine, sort them in a decreasing order.
+2. Initialize an empty schedule.
+3. Using  the sorted order, as long as the schedule does not contain all the jobs:
+   a. add the first job to the list
+   b. create all the possible permutations by shifting the newly added job to the right up to n times .
+   c. compute the makespan of the flowshop schedule and choose the permutation with the lowest makespan.
+   d. increment n by 1 and choose the next job from the aformentioned order
+   
+5. Obtain the schedule.
 
-    schedule = [[] for _ in range(num_machines)]
-    for job in sorted_jobs:
-        min_machine = machine with the minimum total processing time in schedule
-        min_machine.append(job)
+## Pseudo Code:
 
-    final_schedule = [[job_index + 1 for job_index in machine] for machine in schedule]
-    best_makespan = max(sum(Job_dict[final_schedule[-1][i]][i] for i in range(num_machines)),
-                        sum(Job_dict[final_schedule[-1][i]][i] for i in range(num_machines - 1, -1, -1)))
+1. Compute_sum_of_each_job_across_machines_and_sort()
 
-    return final_schedule, best_makespan
+2. Initialize an empty schedule.
 
+3. Set n_jobs_added = 0
 
+4. Repeat until n_jobs_added equals n:
+   a. Add_job_to_schedule_at_index(n_jobs_added)
+   b. Compute_makespan_for_all_possible_permutations()
+   c. Choose_permutation_with_lowest_makespan()
+   d. Increment n_jobs_added by 1
+
+5. Return schedule
 
 </details>
 
@@ -74,6 +78,8 @@ You just fill the variable like so:
 machines_jobs = np.array([[2, 3, 4, 5, 6, 7],[3, 4, 5, 6, 7, 8],[4, 5, 6, 7, 8, 9],[5, 6, 7, 8, 9, 10],[6, 7, 8, 9, 10, 11]])
 ```
 
+### Misc and final words:
 
+Building the logic for computing the markspan across all the newly generated makespans was a challenge, everything else was a breeze, originally I was going to relay on using the itertools to generate permutations but that was unecessary. Optimization-wise, maybe someone out there made a better code, the algorithm is older than me. took aprox 4 hours to build and I am already happy with all of this. Consider [giving this song a shot](https://www.youtube.com/watch?v=lBdQEqgpGfM), I did discover it by lurking /mu while on a bus.
 
 
