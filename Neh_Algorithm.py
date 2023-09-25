@@ -6,7 +6,9 @@ machines_jobs = np.array([[2, 3, 4, 5, 6, 7],[3, 4, 5, 6, 7, 8],[4, 5, 6, 7, 8, 
 if machines_jobs is None:
     print("FEED ME THE JOBS!")
     
-    
+if all(len(i) != len(machines_jobs[0]) for i in machines_jobs):
+    print("NOM NOM NOM NOM, hmmm, it appears that not all processing times are in, check if the data is correct, feed me properly if you want a nice permutation!!")
+
 
     
 
