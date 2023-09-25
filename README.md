@@ -6,7 +6,7 @@
 Naturally, for a flowshop problem, the search space is bounded up to \( n! \) jobs. The heuristic reduces this space by
 
 \
-$\ \frac{\text{Number of permutations with Neh heuristic}}{n!} $ 
+$\ \frac{\text{Number of generated permutations}}{n!} $ 
 
 
 
