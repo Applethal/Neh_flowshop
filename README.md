@@ -35,21 +35,21 @@ $\ \frac{\text{Number of permutations with Neh heuristic}}{n!} $
 5. Obtain the schedule.
 
 ## Pseudo Code:
-
+```
 1. Compute_sum_of_each_job_across_machines_and_sort()
 
 2. Initialize an empty schedule.
 
 3. Set n_jobs_added = 0
 
-4. Repeat until n_jobs_added equals n:
+4. while len(n_jobs) != n :
    a. Add_job_to_schedule_at_index(n_jobs_added)
    b. Compute_makespan_for_all_possible_permutations()
    c. Choose_permutation_with_lowest_makespan()
    d. Increment n_jobs_added by 1
 
 5. Return schedule
-
+```
 </details>
 
 
