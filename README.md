@@ -3,7 +3,7 @@
 
 [The Neh heuristic by Nawaz et al., 1983](https://www.sciencedirect.com/science/article/abs/pii/0305048383900889) is dubbed as an effective greedy heuristic algorithm for flow shop problems. 
 
-Naturally, for a flowshop problem, the search space is bounded up to \( n! \) jobs. The heuristic reduces this space by:
+Naturally, for a flowshop problem, the search space is bounded up to \( n!^m \) jobs. The heuristic reduces this space by:
 
 \
 $\ \frac{\text{Number of generated permutations}}{n!} $ 
